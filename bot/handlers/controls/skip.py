@@ -4,7 +4,7 @@ from ... import server
 from .. import group_command
 
 
-@group_command("resume", "r")
+@group_command("skip", "s")
 async def _(_, message: Message):
     result = await server.stop(message.chat.id)
 
