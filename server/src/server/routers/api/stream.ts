@@ -7,6 +7,10 @@ import queues from "../../../queues";
 const router = Router();
 
 export const getOnFinish = (chatId: number) => async () => {
+    if (!gramtgcalls.connected(chatId)) {
+        return;
+    }
+
     const item = queues.get(chatId);
 
     if (item && item.filePath) {
