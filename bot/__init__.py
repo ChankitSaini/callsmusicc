@@ -11,7 +11,10 @@ SERVER_DIR = path.join(ROOT_DIR, "server", "dist")
 
 
 def run_server():
-    execute_js(SERVER_DIR)
+    try:
+        execute_js(SERVER_DIR)
+    except KeyboardInterrupt:
+        pass
 
 
 client = Client(
