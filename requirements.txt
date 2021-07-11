@@ -9,3 +9,4 @@ youtube_search_python
 naked
 youtube-dl
 pillow
+cryptography
