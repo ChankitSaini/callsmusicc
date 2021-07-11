@@ -1,0 +1,11 @@
+aiohttp
+httpx
+pyaml
+pymongo
+Pyrogram
+python-dotenv
+TgCrypto
+youtube_search_python
+naked
+youtube-dl
+pillow

@@ -1,0 +1,6 @@
+{
+    "python.formatting.provider": "black",
+    "prettier.useTabs": false,
+    "prettier.tabWidth": 4,
+    "prettier.trailingComma": "all"
+}

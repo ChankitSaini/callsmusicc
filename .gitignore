@@ -1,0 +1,15 @@
+dist/
+venv/
+
+node_modules/
+__pycache__/
+
+
+*.session
+*.session-journal
+
+.env
+
+downloads/
+a/
+r/
