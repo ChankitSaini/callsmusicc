@@ -14,7 +14,10 @@ async def _(_, message: Message):
         await message.reply_text("<b>❓ What do you want to play?</b>")
         return
 
+    seaching = await message.reply("<b>🔎 Searching...</b>")
     results = await deezer.search(" ".join(message.command[1:]))
+
+    await seaching.delete()
 
     if results:
         await (

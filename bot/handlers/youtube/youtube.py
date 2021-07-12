@@ -14,7 +14,10 @@ async def _(client: Client, message: Message):
         await message.reply_text("<b>❓ What do you want to play?</b>")
         return
 
+    seaching = await message.reply("<b>🔎 Searching...</b>")
     results = await youtube.search(" ".join(message.command[1:]))
+
+    await seaching.delete()
 
     if results:
         text = get_youtube_search_results_text(results)
