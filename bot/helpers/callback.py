@@ -6,5 +6,4 @@ async def ensure_requester(query: CallbackQuery):
         await query.answer("❌ This is not for you", show_alert=True)
         return False
 
-    await query.answer("✅ Processing your request")
     return True
