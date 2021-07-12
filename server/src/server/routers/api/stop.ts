@@ -4,16 +4,15 @@ import { getOnFinish } from "./stream";
 
 const router = Router();
 
-router.get("/stop", (req, res) => {
-  const chatId = Number(req.query.chatId);
+router.get("/stop", async (req, res) => {
+    const chatId = Number(req.query.chatId);
 
-  if (chatId) {
-    res.json({ ok: true, result: gramtgcalls.stop(chatId) });
-    getOnFinish(chatId)();
-    return;
-  }
+    if (chatId) {
+        res.json({ ok: true, result: await getOnFinish(chatId)() });
+        return;
+    }
 
-  res.json({ ok: false, result: false });
+    res.json({ ok: false, result: false });
 });
 
 export default router;

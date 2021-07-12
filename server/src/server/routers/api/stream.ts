@@ -8,7 +8,7 @@ const router = Router();
 
 export const getOnFinish = (chatId: number) => async () => {
     if (!gramtgcalls.connected(chatId)) {
-        return;
+        return null;
     }
 
     const item = queues.get(chatId);
@@ -17,10 +17,11 @@ export const getOnFinish = (chatId: number) => async () => {
         await gramtgcalls.stream(chatId, await ffmpeg(item.filePath), {
             onFinish: getOnFinish(chatId),
         });
-        return;
+        return true;
     }
 
     await gramtgcalls.leave(chatId);
+    return false;
 };
 
 router.get("/stream", async (req, res) => {
