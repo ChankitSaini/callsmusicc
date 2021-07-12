@@ -21,7 +21,7 @@ export const getOnFinish = (chatId: number) => async () => {
     }
 
     await gramtgcalls.leave(chatId);
-    return false;
+    return true;
 };
 
 router.get("/stream", async (req, res) => {
