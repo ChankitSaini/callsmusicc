@@ -6,7 +6,7 @@ from .. import group_command
 
 @group_command("skip", "s")
 async def _(_, message: Message):
-    result = await server.stop(message.chat.id)
+    result = await server.skip(message.chat.id)
 
     if result:
         await message.reply_text("<b>⏩ Skipped</b>", False)

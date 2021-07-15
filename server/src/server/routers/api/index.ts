@@ -2,9 +2,9 @@ import { Router } from "express";
 
 import pause from "./pause";
 import resume from "./resume";
-import stop from "./stop";
+import stop from "./skip";
 import stream from "./stream";
-import leave from "./leave";
+import leave from "./stop";
 
 const router = Router();
 

@@ -1,15 +1,14 @@
 import { Router } from "express";
-import queues from "../../../queues";
 import gramtgcalls from "../../../client/gramtgcalls";
+import { getOnFinish } from "./stream";
 
 const router = Router();
 
-router.get("/stop", async (req, res) => {
+router.get("/skip", async (req, res) => {
     const chatId = Number(req.query.chatId);
 
     if (chatId) {
-        queues.clear(chatId);
-        res.json({ ok: true, result: await gramtgcalls.stop(chatId) });
+        res.json({ ok: true, result: await getOnFinish(chatId)() });
         return;
     }
 
